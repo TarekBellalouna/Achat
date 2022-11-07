@@ -198,10 +198,15 @@ public class Produit implements Serializable {
 	}
 
 
+	public Produit(Long idProduit, String codeProduit, String libelleProduit, float prix, Date dateCreation) {
+		this.idProduit = idProduit;
+		this.codeProduit = codeProduit;
+		this.libelleProduit = libelleProduit;
+		this.prix = prix;
+		this.dateCreation = dateCreation;
+	}
 
-
-
-	public Produit( String codeProduit, String libelleProduit, float prix, Date dateCreation) {
+	public Produit(String codeProduit, String libelleProduit, float prix, Date dateCreation) {
 		super();
 		
 		this.codeProduit = codeProduit;

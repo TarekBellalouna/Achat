@@ -1,23 +1,33 @@
-version: '3'
-services:
-  database:
-    image: mysql:5.7.8
-    container_name: mysqldb1
-    environment:
-      MYSQL_DATABASE: achatdb
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 
-      MYSQL_ROOT_PASSWORD: 
-    ports:
-      - 3306:3306
+version: "3.3"
 
-    volumes:
-      - /home/mysql/data:/var/lib/mysql
-  spring-boot:
-    build: ./
-    container_name: spring
-    ports:
-      - 8089:8089
-    depends_on:
-      - database
+networks:
+  springboot-mysql-net:
+    external: true
+
+services:
+
+  mysqldb:
+    image: mysql:latest
     restart: on-failure
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=achatdb
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+    networks:
+      - springboot-mysql-net
+    container_name: mysqldb
+    ports:
+      - "3333:3306"
+
+
+  achat-1:
+    build: .
+    restart: on-failure
+    networks:
+      - springboot-mysql-net
+    container_name: achat-1
+    ports:
+      - "8091:8091"
+    depends_on:
+      - mysqldb
