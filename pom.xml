@@ -98,7 +98,7 @@
 				<version>3.1.0</version>
 			</plugin>
 		</plugins>
-		<finalName>achat-1.0</finalName>
+		<finalName>achattarek</finalName>
 	</build>
 
 </project>
