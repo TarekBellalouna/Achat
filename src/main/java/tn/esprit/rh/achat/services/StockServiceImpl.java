@@ -55,5 +55,5 @@ public class StockServiceImpl implements IStockService {
 		return null;
 	}
 
-	
+
 }
