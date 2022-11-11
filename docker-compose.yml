@@ -16,6 +16,6 @@ services:
     restart: on-failure
     container_name: achattarek
     ports:
-      - "8091:8091"
+      - "8089:8089"
     depends_on:
       - mysqldb
