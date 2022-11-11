@@ -19,12 +19,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-public class ProductServiceMockImpl {
-
 	@SpringBootTest
-	@Nested
 	@ExtendWith(MockitoExtension.class)
-	public class ProductServiceImplMock {
+	public class ProductServiceMockImpl {
 
 	    @Mock
 	    ProduitRepository produitRepository;
@@ -86,4 +83,4 @@ public class ProductServiceMockImpl {
 
 	
 }
-	}
+
