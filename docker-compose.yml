@@ -5,10 +5,10 @@ services:
     image: mysql:latest
     restart: on-failure
     environment:
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=achatdb
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=
+      - MYSQL_PASSWORD=123456
     container_name: mysqldb
     ports:
       - "3306:3306"
